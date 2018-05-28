@@ -1,0 +1,17 @@
+YZ50_STATUS="%(?:%{$fg_bold[green]%}0‿0 :%{$fg_bold[red]%}0-0 )"
+YZ50_BRACKET_COLOR="%{$fg[white]%}"
+YZ50_DIR_COLOR="%{$fg[cyan]%}"
+YZ50_GIT_BRANCH_COLOR="%{$fg[green]%}"
+YZ50_GIT_CLEAN_COLOR="%{$fg[green]%}"
+YZ50_GIT_DIRTY_COLOR="%{$fg[red]%}"
+
+ZSH_THEME_GIT_PROMPT_PREFIX="$YZ50_BRACKET_COLOR:$YZ50_GIT_BRANCH_COLOR"
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_CLEAN="$YZ50_GIT_CLEAN_COLOR✓"
+ZSH_THEME_GIT_PROMPT_DIRTY="$YZ50_GIT_DIRTY_COLOR✗"
+
+YZ50_DIR_="$YZ50_DIR_COLOR%~\$(git_prompt_info) "
+YZ50_PROMPT="$YZ50_STATUS: "
+
+# Put it all together!
+PROMPT="$YZ50_DIR_$YZ50_PROMPT%{$reset_color%}"
